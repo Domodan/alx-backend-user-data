@@ -24,7 +24,9 @@ def filter_datum(fields: List[str], redaction: str,
 
 
 def get_logger() -> logging.Logger:
-    """ Returns a Logger Object """
+    """
+        Returns a Logger Object
+    """
     logger = logging.getLogger("user_data")
     logger.setLevel(logging.INFO)
     logger.propagate = False
@@ -36,8 +38,10 @@ def get_logger() -> logging.Logger:
     return logger
 
 
-'''def get_db() -> mysql.connector.connection.MySQLConnection:
-    """ Returns a connector to a MySQL database """
+def get_db() -> mysql.connector.connection.MySQLConnection:
+    """
+        Returns a connector to a MySQL database
+    """
     username = environ.get("PERSONAL_DATA_DB_USERNAME", "root")
     password = environ.get("PERSONAL_DATA_DB_PASSWORD", "")
     host = environ.get("PERSONAL_DATA_DB_HOST", "localhost")
@@ -50,7 +54,7 @@ def get_logger() -> logging.Logger:
     return cnx
 
 
-def main():
+'''def main():
     """
     Obtain a database connection using get_db and retrieves all rows
     in the users table and display each row under a filtered format
