@@ -22,7 +22,7 @@ def filter_datum(fields: List[str], redaction: str,
                          f'{f}={redaction}{separator}', message)
     return message
 
-'''
+
 def get_logger() -> logging.Logger:
     """ Returns a Logger Object """
     logger = logging.getLogger("user_data")
@@ -36,7 +36,7 @@ def get_logger() -> logging.Logger:
     return logger
 
 
-def get_db() -> mysql.connector.connection.MySQLConnection:
+'''def get_db() -> mysql.connector.connection.MySQLConnection:
     """ Returns a connector to a MySQL database """
     username = environ.get("PERSONAL_DATA_DB_USERNAME", "root")
     password = environ.get("PERSONAL_DATA_DB_PASSWORD", "")
