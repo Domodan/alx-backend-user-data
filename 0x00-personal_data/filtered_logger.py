@@ -54,10 +54,10 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     return cnx
 
 
-'''def main():
+def main():
     """
-    Obtain a database connection using get_db and retrieves all rows
-    in the users table and display each row under a filtered format
+        Obtain a database connection using get_db and retrieves all rows
+        in the users table and display each row under a filtered format
     """
     db = get_db()
     cursor = db.cursor()
@@ -73,7 +73,7 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     cursor.close()
     db.close()
 
-'''
+
 class RedactingFormatter(logging.Formatter):
     """
         Redacting Formatter class
@@ -94,7 +94,7 @@ class RedactingFormatter(logging.Formatter):
         record.msg = filter_datum(self.fields, self.REDACTION,
                                   record.getMessage(), self.SEPARATOR)
         return super(RedactingFormatter, self).format(record)
-'''
+
 
 if __name__ == '__main__':
     main()
