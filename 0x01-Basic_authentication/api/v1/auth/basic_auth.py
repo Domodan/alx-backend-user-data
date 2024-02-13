@@ -15,7 +15,7 @@ class BasicAuth(Auth):
     """
         Basic Authentication Class
     """
-    '''def extract_base64_authorization_header(
+    def extract_base64_authorization_header(
             self,
             authorization_header: str) -> str:
         """
@@ -23,12 +23,12 @@ class BasicAuth(Auth):
         """
         if type(authorization_header) == str:
             pattern = r'Basic (?P<token>.+)'
-            field_match = re.fullmatch(pattern, authorization_header.strip())
-            if field_match is not None:
-                return field_match.group('token')
+            head_match = re.fullmatch(pattern, authorization_header.strip())
+            if head_match is not None:
+                return head_match.group('token')
         return None
 
-    def decode_base64_authorization_header(
+    '''def decode_base64_authorization_header(
             self,
             base64_authorization_header: str,
             ) -> str:
