@@ -71,16 +71,19 @@ class BasicAuth(Auth):
         """
             Returns User Instance based on the user's authentication credentials
         """
-        if type(user_email) == str and type(user_pwd) == str:
-            try:
-                users = User.search({'email': user_email})
-            except Exception:
-                return None
-            if len(users) <= 0:
-                return None
-            if users[0].is_valid_password(user_pwd):
-                return users[0]
-        return None
+
+        if decoded_base64_authorization_header is None:
+            return None, None
+
+        if not isinstance(decoded_base64_authorization_header, str):
+            return None, None
+
+        if ':' not in decoded_base64_authorization_header:
+            return None, None
+
+        details = decoded_base64_authorization_header.split(':', 1)
+
+        return details[0], details[1]
 
     '''def current_user(self, request=None) -> TypeVar('User'):
         """Retrieves the user from a request.
