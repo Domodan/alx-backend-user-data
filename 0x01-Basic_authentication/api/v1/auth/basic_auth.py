@@ -28,11 +28,12 @@ class BasicAuth(Auth):
                 return head_match.group('token')
         return None
 
-    '''def decode_base64_authorization_header(
+    def decode_base64_authorization_header(
             self,
             base64_authorization_header: str,
             ) -> str:
-        """Decodes a base64-encoded authorization header.
+        """
+            Decodes a base64-encoded authorization header
         """
         if type(base64_authorization_header) == str:
             try:
@@ -44,7 +45,7 @@ class BasicAuth(Auth):
             except (binascii.Error, UnicodeDecodeError):
                 return None
 
-    def extract_user_credentials(
+    '''def extract_user_credentials(
             self,
             decoded_base64_authorization_header: str,
             ) -> Tuple[str, str]:
