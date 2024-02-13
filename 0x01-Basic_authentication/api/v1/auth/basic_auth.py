@@ -90,7 +90,7 @@ class BasicAuth(Auth):
 
     def current_user(self, request=None) -> TypeVar('User'):
         """
-            Overloads Auth and Returns User Instance from a request
+            Overloads Auth and Retrieves User Instance from a request
         """
         try:
             auth_header = self.authorization_header(request)
