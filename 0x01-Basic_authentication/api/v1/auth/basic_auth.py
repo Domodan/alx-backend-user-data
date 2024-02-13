@@ -53,7 +53,7 @@ class BasicAuth(Auth):
             Extracts user credentials from a base64-decoded authorization
         """
         if type(decoded_base64_authorization_header) == str:
-            pattern = r'(?P<user>[^:]+):(?P<password>.+)'
+            pattern = r'(?P<user>[^]+)(?P<password>.+)'
             field_match = re.fullmatch(
                 pattern,
                 decoded_base64_authorization_header.strip(),
