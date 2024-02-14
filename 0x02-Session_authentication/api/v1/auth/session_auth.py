@@ -39,7 +39,7 @@ class SessionAuth(Auth):
         if isinstance(session_id, str):
             return self.user_id_by_session_id.get(session_id)
 
-    '''def current_user(self, request=None):
+    def current_user(self, request=None):
         """
         Return a user instance based on a cookie value
         Args:
@@ -47,12 +47,12 @@ class SessionAuth(Auth):
         Return:
             User instance
         """
-        session_cookie = self.session_cookie(request)
+        session_id = self.session_cookie(request)
         user_id = self.user_id_for_session_id(session_cookie)
         user = User.get(user_id)
         return user
 
-    def destroy_session(self, request=None):
+    '''def destroy_session(self, request=None):
         """
         Deletes a user session
         """
