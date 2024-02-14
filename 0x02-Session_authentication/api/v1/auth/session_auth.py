@@ -8,7 +8,9 @@ from models.user import User
 
 
 class SessionAuth(Auth):
-'''    """ Implement Session Authorization protocol methods
+    """
+        Class SessionAuth
+        Implementing Session Authorization protocol methods
     """
     user_id_by_session_id = {}
 
@@ -21,13 +23,12 @@ class SessionAuth(Auth):
             None is user_id is None or not a string
             Session ID in string format
         """
-        if user_id is None or not isinstance(user_id, str):
-            return None
-        id = uuid4()
-        self.user_id_by_session_id[str(id)] = user_id
-        return str(id)
+        if isinstance(user_id, str):
+            session_id = str(uuid.uuid4())
+            self.user_id_by_session_id[session_id] = user_id
+            return session_id
 
-    def user_id_for_session_id(self, session_id: str = None) -> str:
+    '''def user_id_for_session_id(self, session_id: str = None) -> str:
         """
         Returns a user ID based on a session ID
         Args:
