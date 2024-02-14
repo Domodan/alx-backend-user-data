@@ -28,6 +28,7 @@ class Auth:
                     return False
         return True
 
+
     def authorization_header(self, request=None) -> str:
         """
             Method to get authorization header
@@ -36,8 +37,19 @@ class Auth:
             return request.headers.get('Authorization', None)
         return None
 
+
     def current_user(self, request=None) -> TypeVar('User'):
         """
             Method to get user from request
         """
         return None
+
+
+    def session_cookie(self, request=None):
+        """
+            Returns a cookie from a request
+        """
+        if request is None:
+            return None
+        cookie_name = os.getenv('SESSION_NAME')
+        return request.cookies.get(cookie_name)
