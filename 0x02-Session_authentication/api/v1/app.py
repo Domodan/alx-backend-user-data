@@ -21,6 +21,9 @@ if auth_type == "auth":
 elif auth_type == "basic_auth":
     from api.v1.auth.basic_auth import BasicAuth
     auth = BasicAuth()
+elif auth_type == "session_auth":
+    from api.v1.auth.session_auth import SessionAuth
+    auth = SessionAuth()
 
 
 @app.errorhandler(404)
@@ -59,9 +62,10 @@ def before_request_handler():
             auth_header = auth.authorization_header(request)
             user = auth.current_user(request)
             if auth_header is None:
-                abort(401)
+                abort(401, description="Unauthorized")
             if user is None:
-                abort(403)
+                abort(403, description="Forbidden")
+            request.current_user = user
 
 
 if __name__ == "__main__":
