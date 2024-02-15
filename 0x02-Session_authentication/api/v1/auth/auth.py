@@ -4,7 +4,8 @@
 """
 from flask import request
 from typing import List, TypeVar
-import os, re
+import os
+import re
 
 
 class Auth:
@@ -28,7 +29,6 @@ class Auth:
                     return False
         return True
 
-
     def authorization_header(self, request=None) -> str:
         """
             Method to get authorization header
@@ -37,13 +37,11 @@ class Auth:
             return request.headers.get('Authorization', None)
         return None
 
-
     def current_user(self, request=None) -> TypeVar('User'):
         """
             Method to get user from request
         """
         return None
-
 
     def session_cookie(self, request=None):
         """
