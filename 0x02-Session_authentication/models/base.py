@@ -119,11 +119,6 @@ class Base():
         """ Return one object by ID
         """
         s_class = cls.__name__
-        print(f"S Class: {s_class}")
-        print(f"DATA: {DATA}")
-        userdata = DATA[s_class]
-        print(f"User Data: {userdata}")
-        print(f"User ID: {userdata.email}")
         return DATA[s_class].get(id)
 
     @classmethod
