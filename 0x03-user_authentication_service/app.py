@@ -67,7 +67,7 @@ def login() -> str:
 
 
 @app.route('/sessions', methods=['DELETE'])
-def logtout() -> str:
+def logout() -> str:
     """
         Find the user with the requested session ID.
         If the user exists destroy the session and redirect the user to GET /.
@@ -84,10 +84,11 @@ def logtout() -> str:
     return redirect('/')
 
 
-'''@app.route('/profile', methods=['GET'])
+@app.route('/profile', methods=['GET'])
 def profile() -> str:
-    """ If the user exist, respond with a 200 HTTP status and a JSON Payload
-    Otherwise respond with a 403 HTTP status.
+    """
+        If the user exist, respond with a 200 HTTP status and a JSON Payload
+        Else respond with a 403 HTTP status.
     """
     session_id = request.cookies.get("session_id", None)
 
@@ -104,7 +105,7 @@ def profile() -> str:
     return jsonify(msg), 200
 
 
-@app.route('/reset_password', methods=['POST'])
+'''@app.route('/reset_password', methods=['POST'])
 def reset_password() -> str:
     """If the email is not registered, respond with a 403 status code.
     Otherwise, generate a token and respond with a
