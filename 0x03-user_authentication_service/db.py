@@ -64,8 +64,9 @@ class DB:
             raise NoResultFound()
         return result
 
-    '''def update_user(self, user_id: int, **kwargs) -> None:
-        """Updates a user based on a given id.
+    def update_user(self, user_id: int, **kwargs) -> None:
+        """
+            Updates a user based on a given id
         """
         user = self.find_user_by(id=user_id)
         if user is None:
@@ -80,4 +81,4 @@ class DB:
             update_source,
             synchronize_session=False,
         )
-        self._session.commit()'''
+        self._session.commit()
