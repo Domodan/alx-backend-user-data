@@ -35,7 +35,8 @@ def _generate_uuid() -> str:
 
 
 class Auth:
-    """Auth class to interact with the authentication database.
+    """
+        Auth class to interact with the authentication database
     """
 
     def __init__(self):
@@ -82,8 +83,15 @@ class Auth:
             return False
         return False
 
-   ''' def create_session(self, email: str) -> str:
-        """Creates a new session for a user.
+    def create_session(self, email: str) -> str:
+        """
+        Creates a new session for a user
+
+        Args:
+            email (str): email of user
+
+        Returns:
+            str: string representation of session ID
         """
         user = None
         try:
@@ -96,7 +104,7 @@ class Auth:
         self._db.update_user(user.id, session_id=session_id)
         return session_id
 
-    def get_user_from_session_id(self, session_id: str) -> Union[User, None]:
+    '''def get_user_from_session_id(self, session_id: str) -> Union[User, None]:
         """Retrieves a user based on a given session ID.
         """
         user = None
