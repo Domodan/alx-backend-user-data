@@ -46,8 +46,9 @@ class DB:
             new_user = None
         return new_user
 
-    '''def find_user_by(self, **kwargs) -> User:
-        """Finds a user based on a set of filters.
+    def find_user_by(self, **kwargs) -> User:
+        """
+            Finds a user based on a set of filters
         """
         fields, values = [], []
         for key, value in kwargs.items():
@@ -63,7 +64,7 @@ class DB:
             raise NoResultFound()
         return result
 
-    def update_user(self, user_id: int, **kwargs) -> None:
+    '''def update_user(self, user_id: int, **kwargs) -> None:
         """Updates a user based on a given id.
         """
         user = self.find_user_by(id=user_id)
