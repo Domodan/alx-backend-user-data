@@ -104,8 +104,15 @@ class Auth:
         self._db.update_user(user.id, session_id=session_id)
         return session_id
 
-    '''def get_user_from_session_id(self, session_id: str) -> Union[User, No]:
-        """Retrieves a user based on a given session ID.
+    def get_user_from_session_id(self, session_id: str) -> Union[User, None]:
+        """
+        Retrieves a user based on a given session ID
+
+        Args:
+            session_id (str): session id of user
+
+        Returns:
+            str: user email
         """
         user = None
         if session_id is None:
@@ -116,7 +123,7 @@ class Auth:
             return None
         return user
 
-    def destroy_session(self, user_id: int) -> None:
+    '''def destroy_session(self, user_id: int) -> None:
         """Destroys a session associated with a given user.
         """
         if user_id is None:
