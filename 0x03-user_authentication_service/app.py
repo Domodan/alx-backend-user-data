@@ -105,11 +105,12 @@ def profile() -> str:
     return jsonify(msg), 200
 
 
-'''@app.route('/reset_password', methods=['POST'])
+@app.route('/reset_password', methods=['POST'])
 def reset_password() -> str:
-    """If the email is not registered, respond with a 403 status code.
-    Otherwise, generate a token and respond with a
-    200 HTTP status and JSON Payload
+    """
+        If the email is not registered, respond with a 403 status code.
+        Else, generate a token and respond with a 200 HTTP status and
+        JSON Payload
     """
     try:
         email = request.form['email']
@@ -126,7 +127,7 @@ def reset_password() -> str:
     return jsonify(msg), 200
 
 
-@app.route('/reset_password', methods=['PUT'])
+'''@app.route('/reset_password', methods=['PUT'])
 def update_password() -> str:
     """ PUT /reset_password
     Updates password with reset token
