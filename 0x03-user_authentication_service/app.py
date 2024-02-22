@@ -127,10 +127,13 @@ def get_reset_password_token() -> str:
     return jsonify(msg), 200
 
 
-'''@app.route('/reset_password', methods=['PUT'])
+@app.route('/reset_password', methods=['PUT'])
 def update_password() -> str:
-    """ PUT /reset_password
+    """
+    PUT /reset_password
+    
     Updates password with reset token
+    
     Return:
         - 400 if bad request
         - 403 if not valid reset token
@@ -149,7 +152,7 @@ def update_password() -> str:
         abort(403)
 
     msg = {"email": email, "message": "Password updated"}
-    return jsonify(msg), 200'''
+    return jsonify(msg), 200
 
 
 if __name__ == "__main__":
