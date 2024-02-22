@@ -107,7 +107,7 @@ def reset_password_token(email: str) -> str:
 
 def update_password(email: str, reset_token: str, new_password: str) -> None:
     """
-        Tests updating a user's password
+        Tests updates for a user's password
     """
     url = "{}/reset_password".format(BASE_URL)
     body = {
