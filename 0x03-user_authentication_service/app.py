@@ -106,7 +106,7 @@ def profile() -> str:
 
 
 @app.route('/reset_password', methods=['POST'])
-def reset_password() -> str:
+def get_reset_password_token() -> str:
     """
         If the email is not registered, respond with a 403 status code.
         Else, generate a token and respond with a 200 HTTP status and
