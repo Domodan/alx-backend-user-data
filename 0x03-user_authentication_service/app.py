@@ -42,9 +42,11 @@ def add_user() -> str:
     return jsonify(msg)
 
 
-'''@app.route('/sessions', methods=['POST'])
-def log_in() -> str:
-    """ Logs in a user and returns session ID """
+@app.route('/sessions', methods=['POST'])
+def login() -> str:
+    """
+        Logs in a user and returns session ID
+    """
     try:
         email = request.form['email']
         password = request.form['password']
@@ -64,7 +66,7 @@ def log_in() -> str:
     return response
 
 
-@app.route('/sessions', methods=['DELETE'])
+'''@app.route('/sessions', methods=['DELETE'])
 def log_out() -> str:
     """Find the user with the requested session ID.
     If the user exists destroy the session and redirect the user to GET /.
