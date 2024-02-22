@@ -62,6 +62,6 @@
 `app.py`
 > 19. Update password end-point
 ---
-``
-> 
+`main.py`
+> 20. End-to-end integration test
 ---
