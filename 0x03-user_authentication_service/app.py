@@ -131,9 +131,9 @@ def get_reset_password_token() -> str:
 def update_password() -> str:
     """
     PUT /reset_password
-    
+
     Updates password with reset token
-    
+
     Return:
         - 400 if bad request
         - 403 if not valid reset token
