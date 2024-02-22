@@ -15,14 +15,18 @@ AUTH = Auth()
 
 @app.route('/', methods=['GET'])
 def hello_world() -> str:
-    """ Base route for authentication service API """
+    """
+        Base route for authentication service API
+    """
     msg = {"message": "Bienvenue"}
     return jsonify(msg)
 
 
-'''@app.route('/users', methods=['POST'])
-def register_user() -> str:
-    """Registers a new user if it does not exist before"""
+@app.route('/users', methods=['POST'])
+def add_user() -> str:
+    """
+        Registers a new user if it does not exist before
+    """
     try:
         email = request.form['email']
         password = request.form['password']
@@ -38,7 +42,7 @@ def register_user() -> str:
     return jsonify(msg)
 
 
-@app.route('/sessions', methods=['POST'])
+'''@app.route('/sessions', methods=['POST'])
 def log_in() -> str:
     """ Logs in a user and returns session ID """
     try:
