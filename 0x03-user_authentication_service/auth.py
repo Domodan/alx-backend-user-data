@@ -55,8 +55,16 @@ class Auth:
             return self._db.add_user(email, _hash_password(password))
         raise ValueError("User {} already exists".format(email))
 
-    '''def valid_login(self, email: str, password: str) -> bool:
-        """Checks if a user's login details are valid.
+    def valid_login(self, email: str, password: str) -> bool:
+        """
+            Checks if a user's login details are valid
+
+        Args:
+            email (str): email of user
+            password (str): password of user
+
+        Returns:
+            bool: [description]
         """
         user = None
         try:
@@ -70,7 +78,7 @@ class Auth:
             return False
         return False
 
-    def create_session(self, email: str) -> str:
+   ''' def create_session(self, email: str) -> str:
         """Creates a new session for a user.
         """
         user = None
